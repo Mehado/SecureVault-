@@ -1,0 +1,159 @@
+/* ========= SecureVault 全局样式 ========= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: #e2e8f0;
+}
+
+#app {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ========= 滚动条 ========= */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(124, 58, 237, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 58, 237, 0.5);
+}
+
+/* ========= 过渡动画 ========= */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+.slide-fade-leave-active {
+  transition: all 0.2s ease-in;
+}
+.slide-fade-enter-from {
+  transform: translateY(20px);
+  opacity: 0;
+}
+.slide-fade-leave-to {
+  transform: translateY(-10px);
+  opacity: 0;
+}
+
+/* ========= ElTable 暗色覆盖 ========= */
+.el-table--dark {
+  --el-table-bg-color: transparent !important;
+  --el-table-tr-bg-color: transparent !important;
+  --el-table-border-color: rgba(255,255,255,0.08) !important;
+  --el-table-header-bg-color: rgba(124,58,237,0.25) !important;
+  --el-table-header-text-color: #e2e8f0 !important;
+
+  th.el-table__cell {
+    background: linear-gradient(135deg, rgba(124,58,237,0.25), rgba(168,85,247,0.15)) !important;
+    color: #1e1b4b !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.5px;
+    border: none !important;
+  }
+
+  td.el-table__cell {
+    border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+  }
+
+  .el-table__body tr:hover > td {
+    background: rgba(124,58,237,0.12) !important;
+  }
+
+  .el-table__body tr.current-row > td {
+    background: rgba(124,58,237,0.15) !important;
+  }
+
+  .el-table__empty-text {
+    color: rgba(255,255,255,0.3) !important;
+  }
+
+  .cell {
+    display: flex !important;
+    align-items: center;
+    gap: 6px;
+  }
+}
+
+/* ========= ElDialog 暗色覆盖 ========= */
+.el-overlay-dialog {
+  .el-dialog {
+    --el-dialog-bg-color: rgba(30,27,75,0.95) !important;
+    --el-dialog-title-font-size: 22px;
+    border: 1px solid rgba(124,58,237,0.3) !important;
+    border-radius: 16px !important;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.5) !important;
+
+    .el-dialog__header {
+      padding: 24px 28px 0 !important;
+      .el-dialog__title {
+        color: #e2e8f0 !important;
+        font-weight: 700;
+      }
+      .el-dialog__headerbtn {
+        font-size: 18px;
+        .el-dialog__close { color: #94a3b8 !important; }
+        &:hover .el-dialog__close { color: #f87171 !important; }
+      }
+    }
+
+    .el-dialog__body {
+      padding: 20px 28px 24px !important;
+    }
+
+    .el-dialog__footer {
+      padding: 0 28px 24px !important;
+    }
+  }
+}
+
+/* ========= ElMessage 定制 ========= */
+.el-message {
+  border-radius: 12px !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+/* ========= ElNotification 定制 ========= */
+.el-notification {
+  border-radius: 14px !important;
+  backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(124,58,237,0.2) !important;
+  background: rgba(30,27,75,0.95) !important;
+
+  .el-notification__title {
+    color: #e2e8f0 !important;
+    font-weight: 600 !important;
+  }
+  .el-notification__content {
+    color: #cbd5e1 !important;
+  }
+}
